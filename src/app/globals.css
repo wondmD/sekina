@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+:root {
+  --navy-950: #030a1f;
+  --navy-900: #061232;
+  --navy-800: #0b1f4d;
+  --navy-700: #13306f;
+  --gold-300: #ecd28f;
+  --gold-400: #d9b25e;
+  --gold-500: #c49a3c;
+  --gold-600: #a07a26;
+  --ink: #e8edf8;
+  --muted: #9aa8c7;
+}
+
+@theme inline {
+  --color-navy-950: var(--navy-950);
+  --color-navy-900: var(--navy-900);
+  --color-navy-800: var(--navy-800);
+  --color-navy-700: var(--navy-700);
+  --color-gold-300: var(--gold-300);
+  --color-gold-400: var(--gold-400);
+  --color-gold-500: var(--gold-500);
+  --color-gold-600: var(--gold-600);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-serif: var(--font-serif);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background: var(--navy-950);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--gold-500);
+  color: var(--navy-950);
+}
+
+/* ---------- Futuristic utilities ---------- */
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(217, 178, 94, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 178, 94, 0.07) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+.bg-dots {
+  background-image: radial-gradient(rgba(232, 237, 248, 0.18) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+.glass {
+  background: linear-gradient(145deg, rgba(19, 48, 111, 0.45), rgba(6, 18, 50, 0.55));
+  border: 1px solid rgba(217, 178, 94, 0.16);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(100deg, var(--gold-300), var(--gold-500) 45%, var(--gold-300) 70%, var(--gold-600));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold-400);
+  font-weight: 600;
+}
+
+.glow-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-400), transparent);
+}
+
+.card-hover {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.4s, box-shadow 0.4s;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  border-color: rgba(217, 178, 94, 0.5);
+  box-shadow: 0 20px 60px -20px rgba(196, 154, 60, 0.35);
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes dash {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+.animate-float { animation: float 7s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 40s linear infinite; }
+.animate-spin-slower { animation: spin-slow 70s linear infinite reverse; }
+.animate-pulse-ring { animation: pulse-ring 2.4s ease-out infinite; }
+.animate-marquee { animation: marquee 30s linear infinite; }
+.route {
+  stroke-dasharray: 6 8;
+  animation: route-move 2.5s linear infinite;
+}
+@keyframes route-move {
+  to { stroke-dashoffset: -28; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
