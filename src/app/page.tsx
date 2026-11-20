@@ -83,7 +83,7 @@ export default function Home() {
       <Navbar />
       <main id="top">
         {/* ================= HERO ================= */}
-        <section className="relative flex min-h-screen items-center overflow-hidden pt-28 pb-16">
+        <section className="relative flex min-h-[min(100svh,960px)] items-center overflow-hidden pt-28 pb-16">
           <div className="bg-grid absolute inset-0" />
           <div className="absolute -left-40 top-20 h-[480px] w-[480px] rounded-full bg-navy-700/50 blur-[120px]" />
           <div className="absolute -right-20 bottom-0 h-[400px] w-[400px] rounded-full bg-gold-600/15 blur-[120px]" />
@@ -110,16 +110,16 @@ export default function Home() {
               <Reveal delay={300} className="mt-10 flex flex-wrap gap-4">
                 <a
                   href="#contact"
-                  className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 px-7 py-3.5 font-semibold text-navy-950 transition hover:shadow-[0_0_36px_rgba(217,178,94,0.55)]"
+                  className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 px-7 py-3.5 font-semibold text-on-gold transition hover:shadow-[0_0_36px_rgba(217,178,94,0.55)]"
                 >
                   Start an Inquiry
                   <IconArrow className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
-                <a href="#process" className="inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-3.5 font-medium text-ink transition hover:border-gold-400/60 hover:text-gold-300">
+                <a href="#process" className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-7 py-3.5 font-medium text-ink transition hover:border-gold-400/60 hover:text-gold-300">
                   How We Export
                 </a>
               </Reveal>
-              <Reveal delay={400} className="mt-14 grid max-w-lg grid-cols-3 gap-4 border-t border-white/10 pt-8">
+              <Reveal delay={400} className="mt-14 grid max-w-lg grid-cols-3 gap-4 border-t border-ink/10 pt-8">
                 {[
                   ["4", "Business pillars"],
                   ["5", "Step export process"],
@@ -178,7 +178,7 @@ export default function Home() {
         {/* ================= ABOUT: VISION & MISSION ================= */}
         <section id="about" className="relative overflow-hidden py-28">
           <div className="bg-dots absolute right-0 top-10 h-48 w-80 opacity-40" />
-          <span className="pointer-events-none absolute -left-6 top-0 select-none font-serif text-[22rem] leading-none text-white/[0.03]">&ldquo;</span>
+          <span className="pointer-events-none absolute -left-6 top-0 select-none font-serif text-[22rem] leading-none text-ink/[0.04]">&ldquo;</span>
           <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
             <SectionHeading eyebrow="Sikena Sane Fedela" title={<>What <span className="text-gradient-gold">drives</span> us</>} />
 
@@ -193,9 +193,9 @@ export default function Home() {
                 </div>
               </Reveal>
               <Reveal delay={150} className="h-full">
-                <div className="relative h-full overflow-hidden rounded-3xl bg-gradient-to-br from-gold-400 via-gold-500 to-gold-600 p-8 text-navy-950 sm:p-10">
+                <div className="relative h-full overflow-hidden rounded-3xl bg-gradient-to-br from-gold-400 via-gold-500 to-gold-600 p-8 text-on-gold sm:p-10">
                   <div className="bg-grid absolute inset-0 opacity-30 mix-blend-overlay" />
-                  <p className="relative text-xs font-bold tracking-[0.4em] text-navy-900">OUR MISSION</p>
+                  <p className="relative text-xs font-bold tracking-[0.4em] text-on-gold">OUR MISSION</p>
                   <p className="relative mt-6 font-serif text-2xl font-semibold italic leading-relaxed sm:text-[1.7rem]">
                     To conduct reliable and responsible business across our areas of operation by sourcing and supplying products that meet
                     customer requirements, building lasting partnerships, and developing our manufacturing and trade capabilities.
@@ -342,7 +342,7 @@ export default function Home() {
         <div className="glow-line absolute inset-x-0 top-0" />
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-5 text-center sm:px-8 md:flex-row md:text-left">
           <div className="flex items-center gap-3">
-            <Image src="/logo.png" alt="" width={48} height={48} className="rounded-full ring-1 ring-gold-400/50" />
+            <Image src="/logo.svg" alt="" width={48} height={48} />
             <div>
               <p className="font-display font-bold tracking-wide">SIKENA SANE FEDELA</p>
               <p className="text-xs text-muted">Trade · Livestock & Meat Export · Manufacturing</p>

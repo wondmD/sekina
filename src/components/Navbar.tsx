@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "#business", label: "Business" },
@@ -30,7 +31,7 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
         <a href="#top" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <Image src="/logo.png" alt="Sikena Sane Fedela logo" width={44} height={44} className="rounded-full ring-1 ring-gold-400/60" priority />
+          <Image src="/logo.svg" alt="Sikena Sane Fedela logo" width={44} height={44} priority />
           <span className="leading-tight">
             <span className="block font-display text-base font-bold tracking-wide text-ink">SIKENA SANE FEDELA</span>
             <span className="block text-[10px] tracking-[0.35em] text-gold-400">SEKINA EXPORT</span>
@@ -48,9 +49,11 @@ export default function Navbar() {
           ))}
         </ul>
 
+        <div className="flex items-center gap-3">
+        <ThemeToggle />
         <a
           href="#contact"
-          className="hidden rounded-full border border-gold-400/60 px-5 py-2 text-sm font-medium text-gold-300 transition-all hover:bg-gold-400 hover:text-navy-950 hover:shadow-[0_0_24px_rgba(217,178,94,0.5)] md:inline-block"
+          className="hidden rounded-full border border-gold-400/60 px-5 py-2 text-sm font-medium text-gold-300 transition-all hover:bg-gold-400 hover:text-on-gold hover:shadow-[0_0_24px_rgba(217,178,94,0.5)] md:inline-block"
         >
           Get a Quote
         </a>
@@ -65,6 +68,7 @@ export default function Navbar() {
           <span className={`h-0.5 w-6 bg-gold-300 transition-opacity ${open ? "opacity-0" : ""}`} />
           <span className={`h-0.5 w-6 bg-gold-300 transition-transform ${open ? "-translate-y-2 -rotate-45" : ""}`} />
         </button>
+        </div>
       </nav>
 
       {open && (
